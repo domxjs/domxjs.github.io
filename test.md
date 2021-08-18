@@ -1,6 +1,5 @@
 ---
-theme: jekyll-theme-cayman
-layout: page
+layout: default
 title: Testing Page
 permalink: /test
 ---
