@@ -7,4 +7,4 @@ permalink: /test
 
 Content here
 
-[Plotmap.org](README.md)
+[domxjs.com](README.md)
