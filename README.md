@@ -1,5 +1,7 @@
 # DOMX
 
+<link rel="icon" type="image/svg+xml" href="images/domx-logo.svg" />
+
 `DOMX` is an approach to building modern web applications using the DOM, browser,
 and patterns morso than relying on frameworks.
 
@@ -196,4 +198,10 @@ What problems does flux solve?
 
 <div style="text-align:center;max-width:400px;margin:0 auto;">
 <img src="images/uddf-patterns-dom-flux.svg" style="width:360px">
+</div>
+
+
+---
+<div style="text-align:center;">
+    <img src="images/domx-logo.svg" style="max-width:150px;margin:2rem;">
 </div>
