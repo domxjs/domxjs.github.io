@@ -57,74 +57,43 @@ There are significant long term benefits to sticking with the platform.
 
 
 ### Examples
+This is not an exhaustive list by any means and there are many libraries you could add.
 
-#### DOM querying 
-- JQuery – first version 
-- Prototype? 
-- Browser QuerySelector, querySelectorAll (2010) 
+- DOM querying 
+  - **Libraries** - JQuery, Prototype (add more and years)
+  - **Browser** - querySelector, querySelectorAll (2010) 
+- HTTP Requests
+  - **Libraries** - [JQuery](https://api.jquery.com/category/ajax/) - 2006, [prototype](http://api.prototypejs.org/ajax/Ajax/index.html) - 2005
+  - **Browser** - ajax, fetch (2015) 
+- String interpolation
+  - **Proprietary** - Array.join, [Crockfords .supplant](https://gist.github.com/pbroschwitz/3891293)
+  - **Libraries** - [prototype](http://api.prototypejs.org/language/String/prototype/interpolate/index.html)
+  - **Browser** - Template literals - `` when? 
+- Promises 
+  - **Libraries** - JQuery Deferred, year?, Prototype?
+  - **Browser** - Promise (2011-2015), Async await – could not be done by libraries 
+- Collection Utilities
+  - **Libraries** - Underscore, Lowdash, Scoreunder  
+  - **Browser** - Array.map, reduce, filter, find (2010-2015)
+- Modules - code packaging and delivery and script loaders 
+  - **Libraries** - CommonJs Modules 2009, AMD modules (2010) - similar to CommonJs but adds asynchronous support. Require (2010)
+  - **Browser** - ES Modules:  2017 
+- Date Manipulation 
+  - **Libraries** - Datejs, Moment, Luxon, Dayjs, Date-fns, Spacetime 
+  - **Browser**: [Temporal](https://2ality.com/2021/06/temporal-api.html ); New platform specific date object at Stage 3.
+- Animation
+  - **Libraries** - JQuery, prototype, Anime.js, Velocity. Js, Popmotion, Three. Js, GreenSock JS, AniJS, Mo. Js, Vivus. js. 
+  - **Browser** - Web Animation API – Spec 2012, Chrome/Firefox 2014 - Experimental 
+- UI Components
+  - **Libraries** - JQueryUI, Backbone, Angular, Ember, React, Vue
+  - **Browser** - Platform - 2017 
+- State Management 
+  - **Libraries** - Redux, Mobx, Recoil, NgXS, NgX 
+  - **Browser** - Only development patterns
+- URL Routing 
+  - **Libraries** - Ember router, Angular router,
+  - **Browser** - History API 
 
-#### HTTP Requests 
-- [JQuery](https://api.jquery.com/category/ajax/) - 2006 
-- [prototype](http://api.prototypejs.org/ajax/Ajax/index.html) - 2005
-- Browser: ajax, fetch (2015) 
-
-#### String interpolation 
-- Array.join 
-- [Crockfords .supplant](https://gist.github.com/pbroschwitz/3891293)
-- [prototype](http://api.prototypejs.org/language/String/prototype/interpolate/index.html)
-- Browser: Template literals - `` when? 
-
-#### Promises 
-- JQuery Deferred, year? 
-- Prototype? 
-- Browser: Promise (2011-2015) 
-- Browser: Async await – could not be done by libraries 
-
-#### Collection Utilities
-- Underscore 
-- Lowdash 
-- Scoreunder  
-- Browser: Array.map, reduce, filter, find (2010-2015) 
-
-#### Modules
-Code packaging and delivery and script loaders 
-- CommonJs Modules 2009 
-- AMD modules (2010) - similar to CommonJs but adds asynchronous support 
-- Require (2010) 
-- Browser: ES Modules:  2017 
-
-#### Date Manipulation 
-- Datejs 
-- Moment 
-- Luxon 
-- Dayjs 
-- Date-fns 
-- Spacetime 
-- Browser: Temporal 
-  - New platform specific date object at Stage 3 
-  - https://2ality.com/2021/06/temporal-api.html 
-
-#### UI Components
-- JQueryUI 
-- Backbone 
-- Angular 
-- Ember 
-- React 
-- Vue (etc.) 
-- Platform - 2017 
-
-#### State Management 
-- Redux 
-- Mobx 
-- Recoil 
-- NgXS 
-- NgX 
-- Browser: Only development patterns 
-
-#### URL Routing 
-- Ember router 
-- Angular router 
-- Browser: History API 
 
 ### Resistance to change 
 Each step going from Proprietary -> Library -> Platform runs up against resistance before adoption. 
