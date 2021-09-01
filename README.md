@@ -158,8 +158,60 @@ libraries is not impossible.
 that need to share the same style.
 
 #### HTTP Calls
+For some, using the `XMLHttpRequest` object directly is taboo; but why?
+It's easy enough to wrap a simple ajax call in a promise.
+
+```js
+const request = (url, {method, body, headers}) => new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(method || "GET", url);
+    if (headers) {
+        Object.keys(headers).forEach(key => {
+            xhr.setRequestHeader(key, headers[key]);
+        });
+    }
+    xhr.onload = () => {
+        if (xhr.status >= 200 && xhr.status < 300) {
+            resolve(xhr.response);
+        } else {
+            reject(xhr.statusText);
+        }
+    };
+    xhr.onerror = () => reject(xhr.statusText);
+    xhr.send(body);
+});
+```
+
+Using `fetch` is also fairly straight forward. 
+
+A potential complication arrises when attempting to standardize on things such as errors
+and timeouts.
+
+These types of things tend to be specific to the application and each HTTP call should
+handle the potential side effects of a non successful response.
+
+Even so, standardized global errors can be handled by triggering a DOM event and listening
+for it at the window to provide 404 pages or toast messages. 
+
 
 #### Client Side Routing
+Routing can be more difficult since the History API only provides us with very basic
+methods for updating or replacing the current URL.
+
+Any solution that is used should therefore be built in a way that is easy to 
+manage, monitor, and upgrade.
+
+There are simple libraries that provide enough of what is needed such as
+[Navigo](https://github.com/krasimir/navigo) or you can draw inspiration from
+examples such as [A modern JavaScript router in 100 lines](https://krasimirtsonev.com/blog/article/A-modern-JavaScript-router-in-100-lines-history-api-pushState-hash-url)
+
+The 100 lines example would be smaller if not supporting hash links and using a global
+DOM click handler to test link clicks against routes and using .preventDefault() over
+a setInterval timer.
 
 
+---
+<div style="text-align:center;">
+    <img src="images/domx-logo.svg" style="max-width:150px;margin:2rem;">
+</div>
 
