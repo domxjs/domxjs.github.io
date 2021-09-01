@@ -3,7 +3,7 @@
 <link rel="icon" type="image/svg+xml" href="images/domx-logo.svg" />
 
 `DOMX` is an approach to building modern web applications using the DOM, browser,
-and patterns morso than relying on frameworks.
+and patterns morso than relying on frameworks or libraries.
 
 ## Platform Evolution
 
@@ -17,7 +17,7 @@ And finally, the browser platform provides its own solution.
     <img src="images/platform-evolution.svg" style="width:100%">
 </div>
 
-### Stage Characteristics
+## Stage Characteristics
 
 <table>
     <tr>
@@ -52,7 +52,7 @@ And finally, the browser platform provides its own solution.
     </tr>
 </table>
 
-### Examples
+## Examples
 This is not an exhaustive list, and there are many libraries and features that could be added.
 
 - DOM querying 
@@ -82,31 +82,27 @@ This is not an exhaustive list, and there are many libraries and features that c
   - **Browser** - Canvas (2010), Web Animation API – Spec 2012, Chrome/Firefox 2014 - Experimental 
 - UI Components
   - **Libraries** - JQueryUI (2007), ExtJs (2007), Backbone (2010), Angular (2010), Ember (2011), React (2013), Webix (2013), Vue (2014), Svelte (2016), SolidJS (2018)
-  - **Browser** - Platform - 2017 
+  - **Browser** - Custom Elements with templates and Shadow DOM (2017) 
 - State Management
   - **Proprietary** Patterns: Observerables, Repositories, Pub/Sub, Flux, UDDF, DDD, etc.
   - **Libraries** - Redux (2015), RxJs (2015), Vuex (2015), Mobx (2016), Akita (2018), Recoil (2020), NgXS (2018), Hookstate (2019) 
-  - **Browser** - Only patterns and toos such as localStorage, sessionStorage, IndexDB
+  - **Browser** - Only patterns and API's such as localStorage, sessionStorage, IndexDB
 - URL Routing 
   - **Libraries** - Ember router (2011), React router (2014), Angular router (2015), navigo (2015), tildeio router (2016)
   - **Browser** - History API - push/replace state (2010)
 
 
-Why do you need a framework when all of this is built into the browser? Of course,
-there will always be a need for libraries. No one wants to build the 483rd date
-component by hand and if there is need for intense animations the Web Animation API
-probably wont cut it.
-
-However, there are significant long term benefits to sticking with the platform as the
+Why do you need a framework when all of this is built into the browser? There are
+significant long term benefits to sticking with the platform as the
 first choice when possible. Standards, backwards compatibility, security, speed.
 
 It does not take any longer to learn how to develop on the browser platform than to learn
-any other library or framework. And those skills will be transferrable.
+any other library or framework. And those skills are transferrable.
 
-In many cases there is a strong argument to be made that when using libraries and frameworks, the additional complexity can add a significant amount of more code and immediate technical debt.
+In many cases there is a strong argument to be made that when using libraries and frameworks, the additional proprietary complexity can add a significant amount of more code and immediate technical debt.
 
 
-### Resistance to change 
+## Resistance to change 
 Each step going from proprietary to library to platform runs up against resistance before adoption. The larger the company backing the library, the higher the resistance due to investment. 
 
 But would you still choose to use prototype.js today? Or choose to use require over import on
@@ -117,73 +113,53 @@ thing and we do not want to train devs on the new thing.
 
 And that is part of the beauty of learning and using the platform to its fullest.
 It integrates with any technology because it is already there. Anyone can
-start today without downloading anything from NPM. Just pull up a chair, a bucket of popcorn,
-and start reading MDN. 
-
-And still the web moves forward; where will you be using in 5-10 years? 
+start today without downloading anything from NPM.
 
 
-### Conclusion
-- New language possibilities without transpiling (async/await example) 
-- Standards 
-- 1 standard 
+## Summary
+Why do we need jQuery when we have querySelectorAll, fetch, and Promise. Why do we need Underscore when we have Array.map, .reduce, .find, etc. Why do we need require when we have import. Why do we need any number of UI component builders when we have Custom Elements? 
 
- Why do we need jQuery when we have querySelectorAll, fetch, and Promise. Why do we need underscore when we have Array.map, .reduce, .find, etc. Why do we need require when we have import. Why do we need any number of UI component builders when we have custom elements? 
+Keep it simple. Prefer standards and patterns to proprietary libraries and frameworks.
 
-Two things that stand out on the list is a router and state management since the platform provides us with the tools to do these things but the patterns may not be as well known.
+Invest knowledge in the platform, it is here for the long haul.
 
-How to use the DOM for SDDF 
+And still the web moves forward; what will you be using in 5-10 years? 
 
 
+## When the Platform is not Enough
+Of course, there will always be a need for libraries. No one wants to build the 483rd date
+component by hand and if there is need for complicated animations the Web Animation API or
+Canvas may not cut it.
 
-# State Management
+At the same time there may be ways to stay close to the platform without investing heavily
+in prorprietary solutions.
 
-The DOMX approach to state management embraces the unidirectional data flow pattern popularized by `FLUX` and `Redux` but relies on API's that already exist in the DOM.
+### Examples
+#### State Management
+One example of this is State Management. The unidirectional data flow pattern popularized
+by Flux, then Redux (and others) can be achieved using window.dispatchEvent as a dispatcher
+and DOM events as actions. The store can simple be an HTML component that contains state and 
+listens to the DOM events.
 
+**[State Management Using the DOM](./state-management.md)**
 
+#### UI Component Libraries
+Most teams will not want to build buttons, date pickers, sliders, inputs, etc. by hand.
 
-## Use Cases
-Why would you consider using a state management solution?
-In many cases you do not need one.
-For simple CRUD applications with little business logic and clear data boundaries
-can manage without any added complexities.
+However, when considering what to use for a UI component library it is important to know
+what the UI will require. Some considerations to keep in mind are:
+- Can you get away with light CSS or a lightweight skinning library with minimal JavaScript.
+- Look for libraries that have few or no dependencies. There are a handful
+that use Web Components that leverage the platform over something like VDOM or
+other proprietary solutions.
+- Invest in skinning your library to match your applications style so switching out or combining
+libraries is not impossible.
+- Create your own component library that combines all of the above using something like [Storybook](https://storybook.js.org/). This is especially useful if you are building multiple applciations
+that need to share the same style.
 
-There are a few conditions
-- Want a slide to consider the use case and benefits 
-- Rationalizing complex data structures and flow 
-- Centralizing and decoupling data 
-- What does that give us 
-- Predictable state from many moving parts 
+#### HTTP Calls
 
-## How to Implement
-
-## Comparisons 
-
-### Flux
-What problems does flux solve? 
-
-
-<div style="text-align:center;max-width:400px;margin:0 auto;">
-<img src="images/uddf-patterns-flux.svg" style="width:360px">
-</div>
+#### Client Side Routing
 
 
 
-
-### React / Redux
-
-<div style="text-align:center;max-width:400px;margin:0 auto;">
-    <img src="images/uddf-patterns-react-redux.svg" style="width:360px">
-</div>
-
-### DOM Flux
-
-<div style="text-align:center;max-width:400px;margin:0 auto;">
-<img src="images/uddf-patterns-dom-flux.svg" style="width:360px">
-</div>
-
-
----
-<div style="text-align:center;">
-    <img src="images/domx-logo.svg" style="max-width:150px;margin:2rem;">
-</div>
