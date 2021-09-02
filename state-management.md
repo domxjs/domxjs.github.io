@@ -20,7 +20,7 @@ Some benifits for a state management solution include:
 - Applying architectural patterns
 
 ## Unidirectional Data Flow
-A popular state management pattern for Web Applications is UDDF (uni-directional data flow).
+A popular state management pattern for Web Applications is UDDF (unidirectional data flow).
 
 This pattern keeps state in a consolodated location usually called a store.
 UI components recieve their state from the store and can dispatch actions
@@ -39,7 +39,7 @@ Early on the scene was the [Flux project from Facebook](https://facebook.github.
 It inspired other libraries such as Redux and MobX.
 
 Flux is not a library, instead it just popularized the pattern. Facebook
-released a few utilities and a dispatcher those who did not want to build it
+released a few utilities and a dispatcher for those who did not want to build it
 for themselves since that is a core piece of the pattern.
 
 <div style="text-align:center;max-width:400px;margin:0 auto;">
@@ -62,8 +62,9 @@ Redux is not without its drawbacks however, to list a few:
 - Most beginners complain about excessive boilerplate.
 - Asynchronous code with thunks and sagas feels clunky and non intuitive for
 such a common and simple need.
-- Does not reduce view data coupling, any component can access any part of the state.
+- It does not reduce view data coupling; any component can access any part of the state.
 - RTK toolkit reduces boilerplate but adds complexity and indirection
+- Steep learning curve.
 
 
 
@@ -84,7 +85,7 @@ Flux dispatcher.
 
 ### DOM Flux
 Using the DOM to implement the Flux pattern we have these pieces:
-- The store is an HTMLElement that has a state property (can be named anything you choose)
+- The store is an HTMLElement that has a state property (can be named anything you choose).
 - The store sets up event listeners for "actions".
 - Actions are simply DOM events. A `CustomEvent` can be used to provide a payload 
 with its `detail` property.
@@ -104,8 +105,18 @@ Using the DOM provides freedom in how the pattern is implemented
 Here is an [Example application](https://github.com/jhorback/wcn-todo-app) with
 three "Data Elements" to show different implementations.
 
+Utilizing the browser platform and DOM has benifits that become apparent
+when developing. When questions arise while using other libraries we are
+required to look up library specific proprietary solutions. However, using the
+DOM provides for simplicity and familiarity out of the box.
+Everyone should now how DOM events are dispatched and handled.
+Answers usually come in the form of "oh wait, this is just an HTML Element... I
+know how those work". Solutions are flexible and can adapt to many development styles
+and application needs however complex or simple.
 
 ---
+The future is the past - we created frameworks that solve problems of yesterday,
+now they get in the way of solutions for today. 
 <div style="text-align:center;">
     <img src="images/domx-logo.svg" style="max-width:150px;margin:2rem;">
 </div>

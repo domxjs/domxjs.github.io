@@ -136,7 +136,7 @@ in prorprietary solutions.
 
 ### Examples
 #### State Management
-One example of this is State Management. The unidirectional data flow pattern popularized
+One example is State Management. The unidirectional data flow pattern popularized
 by Flux, then Redux (and others) can be achieved using window.dispatchEvent as a dispatcher
 and DOM events as actions. The store can simple be an HTML component that contains state and 
 listens to the DOM events.
