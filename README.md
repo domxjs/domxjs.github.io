@@ -209,8 +209,9 @@ The 100 lines example would be smaller if not supporting hash links and using a 
 DOM click handler to test link clicks against routes and using .preventDefault() over
 a setInterval timer.
 
-
 ---
+The future is the past - we created frameworks that solve problems of yesterday,
+now they get in the way of solutions for today. 
 <div style="text-align:center;">
     <img src="images/domx-logo.svg" style="max-width:150px;margin:2rem;">
 </div>

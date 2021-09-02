@@ -12,32 +12,35 @@ can manage without any added complexities.
 As an application grows in complexity the need for a solution first appears
 as pain points in the development experience.
 
-There are a few benifits for considering some sort of state management practices.
+Some benifits for a state management solution include:
+- Decoupling buisiness logic from UI components
 - Rationalizing complex data structures and flow 
 - Centralizing business logic
 - Improving code maintainability
 - Applying architectural patterns
-- Decoupling buisiness logic from UI components
 
 ## Unidirectional Data Flow
-A popular state management pattern for Web Applications is unidirectional Data Flow.
+A popular state management pattern for Web Applications is UDDF (uni-directional data flow).
 
-What problems does this solve?
-- This helps with conceptualizing how the application is built.
-- Fill this out...
+This pattern keeps state in a consolodated location usually called a store.
+UI components recieve their state from the store and can dispatch actions
+when things occur. The store handles the action and updates the state which 
+then updates the UI components.
 
-Alternatives?
+This ensures that there is only one way in which data is transferred to
+other parts of the application and so helps with conceptualizing how the
+application is built.
 
-
-Flux was early on the scene with Facebook and inspired other libraries such as Redux and MobX.
-Many applications have used this pattern with success.
-But is there a way to use this pattern without a library, just equiped with the DOM?
-
-
-## Comparisons 
-There 
+## Implementations 
+There are many UDDF libraries, but lets take a look at two of them to illustrate the pattern.
 
 ### Flux
+Early on the scene was the [Flux project from Facebook](https://facebook.github.io/flux/).
+It inspired other libraries such as Redux and MobX.
+
+Flux is not a library, instead it just popularized the pattern. Facebook
+released a few utilities and a dispatcher those who did not want to build it
+for themselves since that is a core piece of the pattern.
 
 <div style="text-align:center;max-width:400px;margin:0 auto;">
     <img src="images/uddf-patterns-flux.svg" style="width:360px">
@@ -45,16 +48,61 @@ There
 
 
 ### React / Redux
-Add a description and some Redux woes
+Redux, on the other hand, is a full solution to the pattern and is meant to be used
+with React though it is possible to use without it.
+
+A primary difference with Redux is that it uses a functional programing paradigm
+to change the the state in a store using reducers.
+
 <div style="text-align:center;max-width:400px;margin:0 auto;">
     <img src="images/uddf-patterns-react-redux.svg" style="width:360px">
 </div>
 
+Redux is not without its drawbacks however, to list a few:
+- Most beginners complain about excessive boilerplate.
+- Asynchronous code with thunks and sagas feels clunky and non intuitive for
+such a common and simple need.
+- Does not reduce view data coupling, any component can access any part of the state.
+- RTK toolkit reduces boilerplate but adds complexity and indirection
+
+
+
+## UDDF Using the DOM 
+Since Flux is just a pattern, how can we implement the pattern using the tools
+the platform already provides for us?
+
+The central part of the pattern is the dispatcher. Does the platform provide us
+with anything that we can use as a dispatcher? It does, and a very good one in fact.
+
+**`dispatchEvent`**
+
+The `dispatchEvent` method that is found on any DOM element and the window object
+is a very efficient, time tested, fast, dispatcher that also includes
+patterns and features beyond what you will typically find in any hand written
+Flux dispatcher.
+
+
 ### DOM Flux
+Using the DOM to implement the Flux pattern we have these pieces:
+- The store is an HTMLElement that has a state property (can be named anything you choose)
+- The store sets up event listeners for "actions".
+- Actions are simply DOM events. A `CustomEvent` can be used to provide a payload 
+with its `detail` property.
 
 <div style="text-align:center;max-width:400px;margin:0 auto;">
     <img src="images/uddf-patterns-dom-flux.svg" style="width:360px">
 </div>
+
+Using the DOM provides freedom in how the pattern is implemented
+- A more traditional object oriented or DDD approach with classes can be achieved.
+- A more functional approach (i.e. reducers) can also be used.
+- One store or multiple stores can be used.
+- Creating multiple stores that share a global/root state is not hard to implement
+(similar to reacts context API)
+
+
+Here is an [Example application](https://github.com/jhorback/wcn-todo-app) with
+three "Data Elements" to show different implementations.
 
 
 ---
