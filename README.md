@@ -209,6 +209,8 @@ The 100 lines example would be smaller if not supporting hash links and using a 
 DOM click handler to test link clicks against routes and using .preventDefault() over
 a setInterval timer.
 
+See: [FR-5-Router](https://github.com/domxjs/domx/wiki/FR-5-Router)
+
 ---
 The future is the past - we created frameworks that solve problems of yesterday,
 now they get in the way of solutions for today. 

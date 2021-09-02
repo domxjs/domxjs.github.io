@@ -99,7 +99,7 @@ Using the DOM provides freedom in how the pattern is implemented
 - A more functional approach (i.e. reducers) can also be used.
 - One store or multiple stores can be used.
 - Creating multiple stores that share a global/root state is not hard to implement
-(similar to reacts context API)
+(similar to reacts context API); see: [FR-2-DataElement](https://github.com/domxjs/domx/wiki/FR-2-DataElement)
 
 
 Here is an [Example application](https://github.com/jhorback/wcn-todo-app) with
