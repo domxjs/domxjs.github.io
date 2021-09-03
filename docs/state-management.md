@@ -117,6 +117,3 @@ Answers usually come in the form of "oh wait, this is just an HTML Element... I
 know how those work". Solutions are flexible and can adapt to many development styles
 and application needs however complex or simple.
 
----
-The future is the past - we created frameworks that solve problems of yesterday,
-now they get in the way of solutions for today. 
