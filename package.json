@@ -1,0 +1,9 @@
+{
+    "name": "domx.github.io",
+    "version": "0.1.0",
+    "author": "John Horback",
+    "scripts": {
+      "serve": "cd docs && bundle exec jekyll serve"
+    }
+  }
+  

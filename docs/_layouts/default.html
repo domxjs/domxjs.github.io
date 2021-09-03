@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    {% seo %}
+    {% include common-header.html %}
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <img src="assets/domx-logo.svg" style="max-width:150px;">
+      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+      <a href="https://github.com/domxjs/domx" class="btn">View on GitHub</a>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+      {% include common-footer.html %}
+    </main>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+---
+---
+// Logo colors: #7191a8, #007ACC
+// Dark background color: #0d1117
+
+
+// Headers
+$header-heading-color: #fff !default;
+$header-bg-color: #0d1117 !default;
+$header-bg-color-secondary: #155799 !default;
+//$header-bg-color: #155799 !default;
+//$header-bg-color-secondary: #0d1117 !default;
+
+// Text
+$section-headings-color: #007ACC !default;
+$body-text-color: #606c71 !default;
+$body-link-color: #1e6bb8 !default;
+$blockquote-text-color: #819198 !default;
+
+// Code
+$code-bg-color: #f3f6fa !default;
+$code-text-color: #567482 !default;
+
+// Borders
+$border-color: #dce6f0 !default;
+$table-border-color: #e9ebec !default;
+$hr-border-color: #eff0f1 !default;
+
+@import "{{ site.theme }}";
+
+img {
+    user-select: none;
+}
+
+.page-header { 
+    padding: 2rem;
+
+    &.page {
+        display: flex;
+        align-items: center;
+        padding: 0rem;
+        height: 64px;
+       
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        .btn {
+            margin: 1rem;
+        }
+        img {
+            margin: 0 1rem;
+        }
+        h1 {
+            flex:1;
+            text-align: left;
+            line-height: 64px;
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin: 0;
+        }
+    }
+}
+.project-tagline {
+    margin-top: 0;
+}

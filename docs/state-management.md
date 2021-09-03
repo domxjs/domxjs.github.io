@@ -1,6 +1,9 @@
-# State Mangement
-State Management using the DOM.
-
+---
+layout: page
+title: State Management
+permalink: /state-management
+---
+# State Management
 The DOMX approach to state management embraces the unidirectional data flow pattern popularized by `FLUX` and `Redux` but relies on API's that already exist in the DOM.
 
 ## Use Cases
@@ -43,7 +46,7 @@ released a few utilities and a dispatcher for those who did not want to build it
 for themselves since that is a core piece of the pattern.
 
 <div style="text-align:center;max-width:400px;margin:0 auto;">
-    <img src="images/uddf-patterns-flux.svg" style="width:360px">
+    <img src="assets/uddf-patterns-flux.svg" style="width:360px">
 </div>
 
 
@@ -55,7 +58,7 @@ A primary difference with Redux is that it uses a functional programing paradigm
 to change the the state in a store using reducers.
 
 <div style="text-align:center;max-width:400px;margin:0 auto;">
-    <img src="images/uddf-patterns-react-redux.svg" style="width:360px">
+    <img src="assets/uddf-patterns-react-redux.svg" style="width:360px">
 </div>
 
 Redux is not without its drawbacks however, to list a few:
@@ -91,7 +94,7 @@ Using the DOM to implement the Flux pattern we have these pieces:
 with its `detail` property.
 
 <div style="text-align:center;max-width:400px;margin:0 auto;">
-    <img src="images/uddf-patterns-dom-flux.svg" style="width:360px">
+    <img src="assets/uddf-patterns-dom-flux.svg" style="width:360px">
 </div>
 
 Using the DOM provides freedom in how the pattern is implemented
@@ -117,6 +120,3 @@ and application needs however complex or simple.
 ---
 The future is the past - we created frameworks that solve problems of yesterday,
 now they get in the way of solutions for today. 
-<div style="text-align:center;">
-    <img src="images/domx-logo.svg" style="max-width:150px;margin:2rem;">
-</div>
