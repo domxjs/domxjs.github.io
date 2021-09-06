@@ -3,8 +3,11 @@ layout: page
 title: State Management
 permalink: /state-management
 ---
+
 # State Management
 The DOMX approach to state management embraces the unidirectional data flow pattern popularized by `FLUX` and `Redux` but relies on API's that already exist in the DOM.
+
+See: <a href="/data-elements">Data Elements</a>
 
 ## Use Cases
 Why would you consider using a state management solution?
@@ -102,7 +105,7 @@ Using the DOM provides freedom in how the pattern is implemented
 - A more functional approach (i.e. reducers) can also be used.
 - One store or multiple stores can be used.
 - Creating multiple stores that share a global/root state is not hard to implement
-(similar to reacts context API); see: [FR-2-DataElement](https://github.com/domxjs/domx/wiki/FR-2-DataElement)
+(similar to reacts context API); see: [Data Elements](/data-elements)
 
 
 Here is an [Example application](https://github.com/jhorback/wcn-todo-app) with

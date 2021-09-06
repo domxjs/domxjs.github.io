@@ -60,7 +60,37 @@ img {
             margin: 0;
         }
     }
+
+    @include small {
+        &.page {
+            display:block;
+            padding:32px;
+            height: inherit;
+    
+            h1 {
+                display:block;
+                text-align:center;
+            }
+        }
+    }
 }
 .project-tagline {
     margin-top: 0;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+#content {
+    .btn {
+        color: inherit;
+        border-color: inherit;
+        margin-bottom:1rem;
+        text-align: center;
+    }
 }
