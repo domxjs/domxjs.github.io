@@ -61,18 +61,18 @@ img {
         }
     }
 
-    // @include small {
-    //     &.page {
-    //         display:block;
-    //         padding:32px;
-    //         height: inherit;
+    @include small {
+        &.page {
+            display:block;
+            padding:32px;
+            height: inherit;
 
-    //         h1 {
-    //             display:block;
-    //             text-align:center;
-    //         }
-    //     }
-    // }
+            h1 {
+                display:block;
+                text-align:center;
+            }
+        }
+    }
 }
 .project-tagline {
     margin-top: 0;

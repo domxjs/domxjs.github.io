@@ -2,8 +2,9 @@
 layout: page
 title: Data Elements
 permalink: /data-elements
+githuburl: https://github.com/domxjs/domx/tree/master/packages/DataElement
 ---
-# Data Elements test
+# Data Elements
 
 ## Description
 The `DataElement` base class provides for a Flux/Redux style unidirectional data flow state management
