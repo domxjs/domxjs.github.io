@@ -27,7 +27,7 @@ twitter_username: jhorback
 github_username:  jhorback@gmail.com
 
 # Build settings
-#theme: jekyll-theme-cayman - this is what I was using
+theme: jekyll-theme-cayman 
 #theme: minima
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
@@ -54,5 +54,3 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
-theme: jekyll-theme-cayman
