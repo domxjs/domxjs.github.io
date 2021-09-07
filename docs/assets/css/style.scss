@@ -94,3 +94,37 @@ img {
         text-align: center;
     }
 }
+ 
+.blurbc {
+    display: grid;
+    grid-template-columns: 49% 49%;
+    justify-content: space-between;
+
+    @include small {
+        display: block;
+    }
+
+    .blurb {
+        display: flex;
+        flex-direction: column;
+
+        background: #f3f3f3;
+        border-radius: 5px;
+        margin: 2rem 0 1rem;
+        padding: 1rem 2rem;
+        color: black;
+        overflow: auto;
+
+        h3 {
+            color: inherit;
+            opacity:0.7;
+            font-weight: 300;
+
+        }
+        a {
+            margin-top: auto;
+            margin-left: auto;
+            float: right;
+        }
+    }
+}
