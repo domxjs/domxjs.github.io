@@ -94,6 +94,16 @@ img {
         text-align: center;
     }
 }
+.main-content {
+    table {
+        width:100%;
+        th, td {
+            padding: 1rem 1rem;
+            border: 0;
+            border-bottom: 1px solid #e9ebec;
+        }
+    }
+}
  
 .blurbc {
     display: grid;
