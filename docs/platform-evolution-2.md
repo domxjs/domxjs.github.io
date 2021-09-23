@@ -23,6 +23,25 @@ See
 - [State Management](/state-management)
 - [Data Elements](/data-elements)
 
+
+#### Client Side Routing
+Routing can be more difficult since the History API only provides us with very basic
+methods for updating or replacing the current URL.
+
+Any solution that is used should therefore be built in a way that is easy to 
+manage, monitor, and upgrade.
+
+There are simple libraries that provide enough of what is needed such as
+[Navigo](https://github.com/krasimir/navigo) or you can draw inspiration from
+examples such as [A modern JavaScript router in 100 lines](https://krasimirtsonev.com/blog/article/A-modern-JavaScript-router-in-100-lines-history-api-pushState-hash-url)
+
+The 100 lines example would be smaller if not supporting hash links and using a global
+DOM click handler to test link clicks against routes and using .preventDefault() over
+a setInterval timer.
+
+See: [@domx/router](https://github.com/domxjs/domx/tree/master/packages/Router)
+
+
 #### UI Component Libraries
 Most teams will not want to build buttons, date pickers, sliders, inputs, etc. by hand.
 
@@ -36,6 +55,7 @@ other proprietary solutions.
 libraries is not impossible.
 - Create your own component library that combines all of the above using something like [Storybook](https://storybook.js.org/). This is especially useful if you are building multiple applciations
 that need to share the same style.
+
 
 #### HTTP Calls
 For some, using the `XMLHttpRequest` object directly is taboo; but why?
@@ -73,23 +93,6 @@ handle the potential side effects of a non successful response.
 Even so, standardized global errors can be handled by triggering a DOM event and listening
 for it at the window to provide 404 pages or toast messages. 
 
-
-#### Client Side Routing
-Routing can be more difficult since the History API only provides us with very basic
-methods for updating or replacing the current URL.
-
-Any solution that is used should therefore be built in a way that is easy to 
-manage, monitor, and upgrade.
-
-There are simple libraries that provide enough of what is needed such as
-[Navigo](https://github.com/krasimir/navigo) or you can draw inspiration from
-examples such as [A modern JavaScript router in 100 lines](https://krasimirtsonev.com/blog/article/A-modern-JavaScript-router-in-100-lines-history-api-pushState-hash-url)
-
-The 100 lines example would be smaller if not supporting hash links and using a global
-DOM click handler to test link clicks against routes and using .preventDefault() over
-a setInterval timer.
-
-See: [FR - Router #16](https://github.com/domxjs/domx/issues/16)
 
 ---
 The future is the past - we created frameworks that solve problems of yesterday,
