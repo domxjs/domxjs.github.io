@@ -18,6 +18,7 @@ your development experience then perhaps it is time to re-think and simplify.
 - [When the Platform is not Enough](/platform-evolution-2)
 - [State Management](/state-management)
 - **[Data Elements](/data-elements)** (on GitHub)
+- [Client Side Routing](/client-side-routing)
 
 
 <div class="blurbc">
@@ -43,7 +44,7 @@ your development experience then perhaps it is time to re-think and simplify.
     </p>
     <p>
     At the same time there may be ways to stay close to the platform without investing heavily
-    in prorprietary solutions.
+    in proprietary solutions.
     </p>
     <a href="/platform-evolution-2">Read more</a>
 </div>
@@ -67,5 +68,15 @@ your development experience then perhaps it is time to re-think and simplify.
     DOM events and not a JavaScript library.
     </p>
     <a href="/data-elements">Read more</a>
+</div>
+
+<div class="blurb">
+    <h3>Client Side Routing</h3>
+    <p>
+    Often times routing begins and ends with following the boilerplate examples used in your web framework of choice. Routing may even be a feature that is tacked on haphazardly at the end of a development cycle when you realize your application is behaving strangely and need to do some patch work to fix some primary use cases. Or sometimes, even more tragically, routing may not be implemented at all. 
+    </p>
+    <p>
+    </p>
+    <a href="/client-side-routing">Read more</a>
 </div>
 </div>

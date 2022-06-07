@@ -81,7 +81,7 @@ This is not an exhaustive list, and there are many libraries and features that c
   - Libraries - JQueryUI (2007), ExtJs (2007), Backbone (2010), Angular (2010), Ember (2011), React (2013), Webix (2013), Vue (2014), Svelte (2016), SolidJS (2018)
   - Browser - Custom Elements with templates and Shadow DOM (2017) 
 - **State Management**
-  - **Proprietary** Patterns: Observerables, Repositories, Pub/Sub, Flux, UDDF, DDD, etc.
+  - **Proprietary** Patterns: Observables, Repositories, Pub/Sub, Flux, UDDF, DDD, etc.
   - Libraries - Redux (2015), RxJs (2015), Vuex (2015), Mobx (2016), Akita (2018), Recoil (2020), NgXS (2018), Hookstate (2019) 
   - Browser - Only patterns and API's such as localStorage, sessionStorage, IndexDB
 - **URL Routing** 

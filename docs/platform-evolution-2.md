@@ -10,7 +10,7 @@ component by hand and if there is need for complicated animations the Web Animat
 Canvas may not cut it.
 
 At the same time there may be ways to stay close to the platform without investing heavily
-in prorprietary solutions.
+in proprietary solutions.
 
 ### Examples
 #### State Management
@@ -39,7 +39,9 @@ The 100 lines example would be smaller if not supporting hash links and using a 
 DOM click handler to test link clicks against routes and using .preventDefault() over
 a setInterval timer.
 
-See: [@domx/router](https://github.com/domxjs/domx/tree/master/packages/Router)
+See
+- [Client Side Routing](/client-side-routing)
+- [@domx/router](https://github.com/domxjs/domx/tree/master/packages/Router)
 
 
 #### UI Component Libraries

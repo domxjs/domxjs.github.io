@@ -18,8 +18,8 @@ can manage without any added complexities.
 As an application grows in complexity the need for a solution first appears
 as pain points in the development experience.
 
-Some benifits for a state management solution include:
-- Decoupling buisiness logic from UI components
+Some benefits for a state management solution include:
+- Decoupling business logic from UI components
 - Rationalizing complex data structures and flow 
 - Centralizing business logic
 - Improving code maintainability
@@ -28,8 +28,8 @@ Some benifits for a state management solution include:
 ## Unidirectional Data Flow
 A popular state management pattern for Web Applications is UDDF (unidirectional data flow).
 
-This pattern keeps state in a consolodated location usually called a store.
-UI components recieve their state from the store and can dispatch actions
+This pattern keeps state in a consolidated location usually called a store.
+UI components receive their state from the store and can dispatch actions
 when things occur. The store handles the action and updates the state which 
 then updates the UI components.
 
@@ -111,7 +111,7 @@ Using the DOM provides freedom in how the pattern is implemented
 Here is an [Example application](https://github.com/jhorback/wcn-todo-app) with
 three "Data Elements" to show different implementations.
 
-Utilizing the browser platform and DOM has benifits that become apparent
+Utilizing the browser platform and DOM has benefits that become apparent
 when developing. When questions arise while using other libraries we are
 required to look up library specific proprietary solutions. However, using the
 DOM provides for simplicity and familiarity out of the box.
