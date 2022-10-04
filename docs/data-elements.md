@@ -10,18 +10,13 @@ githuburl: https://github.com/domxjs/domx/tree/master/packages/DataElement
 The `DataElement` base class provides for a Flux/Redux style unidirectional data flow state management
 pattern using DOM events and custom elements.
 
-By utilizing the DOM and custom elements the footprint is small and 
+By utilizing the DOM and custom elements, the footprint is small and 
 performance is fast since communication happens through
 DOM events and not a JavaScript library.
 
 It works well with `LitElement` since that also uses custom elements,
 but since it is a custom element itself, it will work with any (or no)
 library/framework.
-
-Using DataElements does not have the boilerplate of Redux and is more like
-using the [React context api](https://reactjs.org/docs/context.html).
-It also provides for the dynamic state creation abilities of 
-[recoil](https://recoiljs.org/).
 
 See: <a href="/state-management">State Management</a>
 
@@ -64,12 +59,70 @@ export class SessionData extends DataElement {
 ```
 
 ### UI Component
+## Basic Usage
+This is a contrived example showing default usage of a DataElement.
+
+```js
+import { DataElement } from "@domx/dataelement";
+import { customDataElement, event } from "@domx/dataelement/decorators";
+
+
+export class UserLoggedInEvent extends Event {
+    static eventType = "user-logged-in";
+    userName:string;
+    fullName:string;
+    constructor(userName:string, fullName:string) {
+        super(UserLoggedInEvent.eventType, {
+            bubbles: true,
+            composed: true
+        });
+        this.userName = userName;
+        this.fullName = fullName;
+    }
+}
+
+
+@customDataElement("session-data", {
+    eventsListenAt: "window"
+});
+export class SessionData extends DataElement {
+    static defaultState = {
+        loggedInUserName: "",
+        loggedInUsersFullName: ""
+    };
+
+    state = SessionData.defaultState;
+
+    // event comes from the EventMap package
+    @event(UserLoggedInEvent.eventType)
+    userLoggedIn(event:UserLoggedInEvent) {
+        this.state = {
+            ...this.state,
+            loggedInUserName: event.userName,
+            loggedInUsersFullName: event.fullName
+        };
+        this.dispatchEvent(new Event("state-changed"));
+    }
+}
+```
+> By subclassing the Event class, The `UserLoggedInEvent` acts 
+as a great way to document what events a data element can handle.
+This is similar to action creators in Redux. They can be defined
+in the same file as the DataElement (or in a separate file
+if that works better for you) and used by UI components
+to trigger events.
+
+> The static `defaultState` property allows UI components
+to reference the `defaultState` for initialization.
+
+### UI Component
 The `SessionData` element can be used in any UI component.
 
 ```js
-import { customElement, LitElement, html } from "@lit-element";
-import { linkProp } from "@domx/linkProp";
-import { SessionData } from "./SessionData";
+import { LitElement, html } from "lit";
+import { customElement } from "lit/decorators.js";
+import { linkProp } from "@domx/dataelement";
+import { SessionData, UserLoggedInEvent } from "./SessionData";
 
 class LoggedInUser extends LitElement {
     state = SessionData.defaultState;
@@ -81,18 +134,26 @@ class LoggedInUser extends LitElement {
             <session-data
                 @state-changed="${linkProp(this, "state")}"
             ></session-data>
+            <button @click="${this.updateUserClicked}">Update user</button>
             <div>
                 Logged in as: ${state.loggedInUserName}
                 (${state.loggedInUsersFullName})
             </div>
         `;
     }
+    
+    updateUserClicked(event) {
+        this.dispatchEvent(new UserLoggedInEvent("juser", "Joe User"));
+    }
 }
 ```
+> linkProp is a helper method to propagate changes from a data element to its
+parent UI element. See [linkProp](https://github.com/domxjs/domx/tree/master/packages/linkProp).
+
 
 ## Highlights
 - Works with Redux Dev Tools.
-- Can configure any (and multiple) properties to be the `state` property.
+- Can configure any (and multiple) properties to be a `state` property.
 - Can use/configure a `stateId` property to track state for instance data.
 - Works with (but does not require) the [StateChange](https://github.com/domxjs/domx/tree/master/packages/StateChange) monad for `functional` JavaScript patterns (e.g. `reducers`)
   - `StateChange` also works with [Immer](https://github.com/immerjs/immer) which

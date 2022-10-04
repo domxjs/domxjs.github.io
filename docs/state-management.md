@@ -15,7 +15,7 @@ In many cases you do not need one.
 Simple / CRUD applications with little business logic and clear data boundaries
 can manage without any added complexities.
 
-As an application grows in complexity the need for a solution first appears
+As an application grows in complexity, the need for a solution first appears
 as pain points in the development experience.
 
 Some benefits for a state management solution include:
@@ -94,7 +94,8 @@ Using the DOM to implement the Flux pattern we have these pieces:
 - The store is an HTMLElement that has a state property (can be named anything you choose).
 - The store sets up event listeners for "actions".
 - Actions are simply DOM events. A `CustomEvent` can be used to provide a payload 
-with its `detail` property.
+with its `detail` property. Or better yet, use a subclassed DOM `Event` for better
+type safety.
 
 <div style="text-align:center;max-width:400px;margin:0 auto;">
     <img src="assets/uddf-patterns-dom-flux.svg" style="width:360px">
@@ -110,6 +111,8 @@ Using the DOM provides freedom in how the pattern is implemented
 
 Here is an [Example application](https://github.com/jhorback/wcn-todo-app) with
 three "Data Elements" to show different implementations.
+
+Here is a more in depth example: [Harbor](https://github.com/jhorback/harbor).
 
 Utilizing the browser platform and DOM has benefits that become apparent
 when developing. When questions arise while using other libraries we are
